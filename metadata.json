@@ -1,0 +1,6 @@
+{
+  "name": "HEINSITT.LAB — Kinetic Portfolio & Infrastructure Playground",
+  "description": "Interactive cloud infrastructure, GitOps, observability, and kinetic web engineering lab playground by Hein Sitt.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

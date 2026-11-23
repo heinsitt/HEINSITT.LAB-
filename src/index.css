@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+@layer base {
+  :root {
+    color-scheme: dark;
+    --bg-canvas: #090D16;
+    --bg-surface: #0F172A;
+    --bg-elevated: #111827;
+    --accent-cyan: #38BDF8;
+    --accent-indigo: #818CF8;
+    --accent-emerald: #34D399;
+  }
+
+  html {
+    background-color: #090D16;
+    font-family: var(--font-sans);
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #090D16;
+    color: #F1F5F9;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+  }
+}
+
+/* Architectural dot matrix & hairline grid */
+.studio-dot-grid {
+  background-image:
+    radial-gradient(rgba(148, 163, 184, 0.16) 1px, transparent 1px),
+    linear-gradient(to right, rgba(148, 163, 184, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(148, 163, 184, 0.035) 1px, transparent 1px);
+  background-size: 28px 28px, 112px 112px, 112px 112px;
+}
+
+/* Animated SVG data-flow pulse paths */
+@keyframes flowDash {
+  from {
+    stroke-dashoffset: 36;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.animate-flow-dash {
+  stroke-dasharray: 6 6;
+  animation: flowDash 1.4s linear infinite;
+}
+
+.animate-flow-dash-fast {
+  stroke-dasharray: 5 5;
+  animation: flowDash 0.75s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .animate-flow-dash,
+  .animate-flow-dash-fast {
+    animation: none;
+  }
+}
